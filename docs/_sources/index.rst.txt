@@ -1,5 +1,5 @@
-Calidad de Datos
-================
+LEILA - Libreria de calidad de datos
+====================================
 
 .. toctree::
    :maxdepth: 2
