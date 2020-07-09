@@ -1,0 +1,11 @@
+calidad_datos
+=============
+
+.. toctree::
+   :maxdepth: 4
+
+   datos
+   example_google
+   example_restructuredtext_spamfilter
+   metadatos
+   reporte

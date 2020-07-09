@@ -1,0 +1,7 @@
+metadatos module
+================
+
+.. automodule:: metadatos
+   :members:
+   :undoc-members:
+   :show-inheritance:

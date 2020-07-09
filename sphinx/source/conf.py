@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Calidad de Datos'
+project = 'LEILA'
 copyright = '2020, UCD - DNP'
 author = 'UCD - DNP'
 
@@ -37,13 +37,10 @@ rinoh_documents = [('index',                                      # top-level fi
                     'Documentacion librería calidad de datos',    # document title
                     'DNP - UCD')]                                 # document author  
 
-
 latex_elements = {
     'classoptions': ',openany',
     'babel': r'\usepackage[english]{babel}',
 }
-
-rinoh_paper_size = 'letter'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -65,8 +62,8 @@ exclude_patterns = []
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
 html_theme = 'sphinx_rtd_theme'
+html_show_sourcelink = False
 
 html_theme_options = {    
     'display_version': True,
@@ -76,10 +73,7 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-
 html_css_files = ['css/custom.css']
-
-html_show_sourcelink = False
 html_logo  = '_static/image/logo_200.png'
 html_favicon = '_static/image/favicon.ico'
 

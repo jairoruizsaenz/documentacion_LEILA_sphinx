@@ -1,0 +1,8 @@
+reporte
+=======
+
+.. automodule:: reporte
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :exclude-members: main

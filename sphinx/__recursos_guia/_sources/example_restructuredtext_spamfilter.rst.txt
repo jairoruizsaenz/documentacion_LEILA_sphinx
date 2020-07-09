@@ -1,0 +1,7 @@
+example\_restructuredtext\_spamfilter module
+============================================
+
+.. automodule:: example_restructuredtext_spamfilter
+   :members:
+   :undoc-members:
+   :show-inheritance:
