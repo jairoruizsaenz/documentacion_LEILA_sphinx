@@ -3,7 +3,7 @@
 Reporte
 =======
 
-.. figure:: _static/image/vista_reporte.gif
+.. figure:: https://github.com/jairoruizsaenz/test_sphinx/blob/master/docs/_images/vista_reporte.gif?raw=true
     :align: center
     :alt: Ejemplo de reporte
     :figclass: align-center
