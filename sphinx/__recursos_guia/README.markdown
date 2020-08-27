@@ -13,6 +13,7 @@ sphinx_rtd_theme    0.4.3
 pip install -U sphinx
 pip install sphinx_rtd_theme		#opcional
 pip install rinohtype               #opcional - para exportar en PDF
+pip install sphinx_copybutton
 
 pip install pandas
 pip install sodapy
@@ -31,6 +32,7 @@ pip install sodapy
     * se debe agregar la extension de autodoc para que generar los .rst automáticamente, adicionalmente se agrega la extensión rinoh para exportar la documentación en formato pdf.
 
         extensions = ['sphinx.ext.autodoc', 'rinoh.frontend.sphinx']
+        extensions = ['sphinx.ext.autodoc', 'rinoh.frontend.sphinx','sphinx.ext.autosectionlabel', 'sphinx_copybutton']
 
     * para generar la documentación en pdf agregar 
         rinoh_documents = [('index',                                      # top-level file (index.rst)

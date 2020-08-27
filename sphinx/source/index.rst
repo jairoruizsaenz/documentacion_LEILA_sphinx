@@ -1,9 +1,9 @@
-LEILA - Libreria de calidad de datos
+LEILA - Librería de calidad de datos
 ====================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: CALIDAD DE DATOS:
+   :caption: LEILA:
    :hidden:
 
    introduccion   
@@ -15,9 +15,9 @@ LEILA - Libreria de calidad de datos
    :caption: Módulos y funciones:
    :hidden:
 
-   calidad_datos
-   datos_gov
-   reporte   
+   funciones/calidad_datos
+   funciones/datos_gov
+   funciones/reporte   
 
 .. figure:: _static/image/LEILA.jpg
     :align: center
