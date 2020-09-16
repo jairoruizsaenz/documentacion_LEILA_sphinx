@@ -74,7 +74,6 @@ add :exclude-members: main to a .rst file to exclude/ignore a function from the 
 :: Download miktex
 https://miktex.org/download
 
-
 pilas pues
 https://github.com/sphinx-doc/sphinx/issues/3807
 
@@ -84,6 +83,8 @@ make latex
 cd build
 cd latex
 pdflatex leila.tex
+
+** si no reconoce el comando pdflatex seguramente no se tienen instaladas las dependencias de latex, instalar https://miktex.org/download
 
 
 ## A Collection of Issues about the LaTeX Output in Sphinx and the Solutions
