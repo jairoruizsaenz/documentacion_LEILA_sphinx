@@ -3,7 +3,8 @@ Ejemplos - Reporte
 
 reporte.generar_reporte
 -----------------------
-Crea un reporte de calidad de datos en formato HTML utilizando las funciones disponibles en los otros módulos de la librería. Ver documentación :py:meth:`reporte.generar_reporte`
+
+Crea un reporte de calidad de datos en formato HTML.
 
     .. code-block:: python
 
@@ -20,3 +21,9 @@ Crea un reporte de calidad de datos en formato HTML utilizando las funciones dis
         11:52:29 AM (01 min 4 seg)
         --------------------------------------------------------------
 
+.. figure:: https://github.com/ucd-dnp/leila/blob/gh-pages/sphinx/source/_static/image/vista_reporte.gif?raw=true
+    :align: center
+    :alt: Ejemplo de reporte
+    :figclass: align-center
+
+    Ejemplo de reporte

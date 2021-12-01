@@ -19,12 +19,12 @@ sys.path.insert(0, os.path.abspath('../../leila'))
 # -- Project information -----------------------------------------------------
 
 project = 'LEILA'
-copyright = '2020, UCD - DNP'
+copyright = '2021, UCD - DNP'
 author = 'UCD - DNP'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1'
-version = 'Versión ' + release
+release = '0.2'
+version = 'latest - v0.2'
 
 # -- General configuration ---------------------------------------------------
 
@@ -32,7 +32,8 @@ version = 'Versión ' + release
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-extensions = ['sphinx.ext.autodoc', 'rinoh.frontend.sphinx','sphinx.ext.autosectionlabel', 'sphinx_copybutton']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosectionlabel', 'sphinx_copybutton', 'sphinx_multiversion']
+# extensions = ['sphinx.ext.autodoc', 'rinoh.frontend.sphinx','sphinx.ext.autosectionlabel', 'sphinx_copybutton']
 
 copybutton_prompt_text = "myinputprompt"
 copybutton_prompt_text = ">>> "
@@ -46,10 +47,8 @@ rinoh_documents = [('index',                                      # top-level fi
                     'Documentacion librería calidad de datos',    # document title
                     'DNP - UCD')]                                 # document author  
 
-latex_elements = {
-    'classoptions': ',openany',
-    'babel': r'\usepackage[english]{babel}',
-}
+# latex_elements = {'classoptions': ',openany', 'babel': r'\usepackage[english]{babel}'}
+latex_elements = {'classoptions': ',openany', 'babel': r'\usepackage[spanish]{babel}'}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -75,7 +74,7 @@ html_theme = 'sphinx_rtd_theme'
 html_show_sourcelink = False
 
 html_context = {
-    "display_github": False,         # Integrate GitHub
+    "display_github": False,        # Integrate GitHub
     "github_user": "ucd-dnp",       # Username
     "github_repo": "leila",         # Repo name
     "github_version": "master",     # Version
