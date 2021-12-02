@@ -50,12 +50,19 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduccion.html">Introducción</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../instalacion.html">Instalación</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../intro_ejemplos.html">Ejemplos</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Módulos y funciones:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="calidad_datos.html">Calidad datos</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Datos gov</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Datos gov</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ejemplo-tabla-inventario">Ejemplo tabla_inventario</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#descargar-tabla-inventario">Descargar tabla inventario</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filtrar-tabla-inventario">Filtrar tabla inventario</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejemplo-cargar-base">Ejemplo cargar_base</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="reporte.html">Reporte</a></li>
 </ul>
 
@@ -98,7 +105,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="datos_gov.DatosGov.cargar_base">
 <code class="sig-name descname"><span class="pre">cargar_base</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">api_id</span></span></em>, <em><span class="n"><span class="pre">limite_filas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datos_gov.DatosGov.cargar_base" title="Enlazar permanentemente con esta definición"></a></dt>
-<dd><p>Permite descargar un conjunto de datos del portal de datos.gov.co         dado su identificador <cite>api_id</cite> en el portal.         <a class="reference internal" href="../ejemplos/ejemplos_datos_gov.html#datosgov-cargar-base"><span class="std std-ref">Ver ejemplo</span></a>.</p>
+<dd><p>Permite descargar un conjunto de datos del portal de datos.gov.co         dado su identificador <cite>api_id</cite> en el portal.         <a class="reference internal" href="#ejemplo-cargar-base"><span class="std std-ref">Ver ejemplo</span></a>.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Advertencia</p>
 <p class="last">Al descargar una base de datos utilizando el API de Socrata,             esta omitirá cualquier columna que no contenga registros, lo cual             puede generar inconsistencias con la información descrita en el             portal de datos abiertos.</p>
@@ -137,7 +144,7 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="datos_gov.DatosGov.tabla_inventario">
 <code class="sig-name descname"><span class="pre">tabla_inventario</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filtro</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em><span class="n"><span class="pre">limite_filas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000000000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datos_gov.DatosGov.tabla_inventario" title="Enlazar permanentemente con esta definición"></a></dt>
-<dd><p>Función que se conecta con el API de Socrata para el portal de         datos.gov.co y retorna el inventario de datos disponible.         <a class="reference internal" href="../ejemplos/ejemplos_datos_gov.html#datosgov-tabla-inventario"><span class="std std-ref">Ver ejemplo</span></a></p>
+<dd><p>Función que se conecta con el API de Socrata para el portal de         datos.gov.co y retorna el inventario de datos disponible.         <a class="reference internal" href="#ejemplo-tabla-inventario"><span class="std std-ref">Ver ejemplo</span></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -171,6 +178,244 @@
 
 </dd></dl>
 
+<p><h4 style="margin-bottom: 6px;">Ejemplos</h4>
+<hr style="margin-top: 0;"></p>
+<div class="section" id="ejemplo-tabla-inventario">
+<h2>Ejemplo tabla_inventario<a class="headerlink" href="#ejemplo-tabla-inventario" title="Enlazar permanentemente con este título"></a></h2>
+<div class="section" id="descargar-tabla-inventario">
+<h3>Descargar tabla inventario<a class="headerlink" href="#descargar-tabla-inventario" title="Enlazar permanentemente con este título"></a></h3>
+<p>Se conecta al API de Socrata y retorna la base de datos Asset Inventory descargada del Portal de Datos Abiertos como dataframe. Este conjunto de datos es un inventario de los recursos en el sitio. Ver documentación <a class="reference internal" href="#datos_gov.DatosGov.tabla_inventario" title="datos_gov.DatosGov.tabla_inventario"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DatosGov.tabla_inventario()</span></code></a></p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se importan las funciones de la librería</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">leila</span> <span class="kn">import</span> <span class="n">datos_gov</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se invoca la función para descargar la base de datos Asset Inventory</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inventario</span> <span class="o">=</span> <span class="n">datos_gov</span><span class="o">.</span><span class="n">tabla_inventario</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>A continuación verificamos el tipo de objeto de la variable <strong>inventario</strong> y su tamaño, para asegurarnos de haber descargado los datos correctamente.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Verificamos el tipo de objeto de &#39;inventario&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">inventario</span><span class="p">)</span>
+<span class="go">pandas.core.frame.DataFrame</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Verificamos el tamaño &#39;inventario&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inventario</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(19729, 25)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="filtrar-tabla-inventario">
+<h3>Filtrar tabla inventario<a class="headerlink" href="#filtrar-tabla-inventario" title="Enlazar permanentemente con este título"></a></h3>
+<p>Para realizar el filtro de la base de datos de la tabla de inventario debemos tener en cuenta la información disponible, primero consultamos los campos de consulta que podemos usar.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Consultamos las columnas de la base &#39;inventario&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">inventario</span><span class="p">)</span>
+<span class="go">[&#39;numero_api&#39;,</span>
+<span class="go"> &#39;nombre&#39;,</span>
+<span class="go"> &#39;descripcion&#39;,</span>
+<span class="go"> &#39;dueno&#39;,</span>
+<span class="go"> &#39;tipo&#39;,</span>
+<span class="go"> &#39;categoria&#39;,</span>
+<span class="go"> &#39;terminos_clave&#39;,</span>
+<span class="go"> &#39;url&#39;,</span>
+<span class="go"> &#39;fecha_creacion&#39;,</span>
+<span class="go"> &#39;fecha_actualizacion&#39;,</span>
+<span class="go"> &#39;actualizacion_frecuencia&#39;,</span>
+<span class="go"> &#39;filas&#39;,</span>
+<span class="go"> &#39;columnas&#39;,</span>
+<span class="go"> &#39;correo_contacto&#39;,</span>
+<span class="go"> &#39;licencia&#39;,</span>
+<span class="go"> &#39;entidad&#39;,</span>
+<span class="go"> &#39;entidad_url&#39;,</span>
+<span class="go"> &#39;entidad_sector&#39;,</span>
+<span class="go"> &#39;entidad_departamento&#39;,</span>
+<span class="go"> &#39;entidad_orden&#39;,</span>
+<span class="go"> &#39;entidad_dependencia&#39;,</span>
+<span class="go"> &#39;entidad_municipio&#39;,</span>
+<span class="go"> &#39;idioma&#39;,</span>
+<span class="go"> &#39;cobertura&#39;,</span>
+<span class="go"> &#39;base_publica&#39;]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Una vez conocemos los campos de búsqueda que tenemos disponibles, procedemos con el filtro a la base <em>inventario</em>, en este caso filtraremos las bases de datos que contengan los términos “SECOP” y “contratos” en el nombre de la base de datos y cuya fecha de actualización sea posterior al 14 de Junio del 2020.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se importan las funciones de la librería</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">leila</span> <span class="kn">import</span> <span class="n">datos_gov</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Filtrar bases cuyo nombre incluyen el término &#39;SECOP&#39; y &#39;contratos&#39;, y cuya fecha de actualización es posterior al 14 de junio de 2020</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">columnas_valor</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:[</span><span class="s2">&quot;SECOP&quot;</span><span class="p">,</span> <span class="s2">&quot;contratos&quot;</span><span class="p">],</span> <span class="s2">&quot;fecha_actualizacion&quot;</span><span class="p">:[</span><span class="s2">&quot;2020-06-15&quot;</span><span class="p">,</span><span class="s2">&quot;+&quot;</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tabla_filtrada</span> <span class="o">=</span> <span class="n">datos_gov</span><span class="o">.</span><span class="n">filtrar_tabla</span><span class="p">(</span><span class="n">columnas_valor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Procedemos a consultar los resultamos obtenidos</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Consultamos el nombre, número api y fecha de actualización de las 5 primeras respuestas obtenidas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tabla_filtrada</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)[[</span><span class="s1">&#39;nombre&#39;</span><span class="p">,</span> <span class="s1">&#39;numero_api&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_actualizacion&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="5%" />
+<col width="66%" />
+<col width="10%" />
+<col width="19%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Index</th>
+<th class="head">nombre</th>
+<th class="head">numero_api</th>
+<th class="head">fecha_actualizacion</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>4299</td>
+<td>SECOP II - Contratos+16KSMMLV</td>
+<td>k9pc-rjkh</td>
+<td>2020-07-30</td>
+</tr>
+<tr class="row-odd"><td>7134</td>
+<td>SECOP II - Suma Contratos Por Proveedor</td>
+<td>iwpe-6gqp</td>
+<td>2020-07-30</td>
+</tr>
+<tr class="row-even"><td>11434</td>
+<td>Vista SECOP Integrado Contratos FONTIC - Iniciativa Datos Abiertos</td>
+<td>bqww-w6pq</td>
+<td>2020-07-30</td>
+</tr>
+<tr class="row-odd"><td>12946</td>
+<td>SECOP II - Contratos Electrónicos</td>
+<td>jbjy-vk9h</td>
+<td>2020-07-30</td>
+</tr>
+<tr class="row-even"><td>14357</td>
+<td>SECOP I - Contratos+16KSMMLV</td>
+<td>79ga-5jck</td>
+<td>2020-07-30</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>A continuación se presentan algunas variaciones que pueden utilizar al filtrar las bases de datos</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Filtrar bases con fechas anteriores a 2020-07-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">columnas_valor</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;fecha_creacion&quot;</span><span class="p">:[</span><span class="s2">&quot;2020-07-15&quot;</span><span class="p">,</span><span class="s2">&quot;-&quot;</span><span class="p">]}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Filtrar bases con fechas posteriores a 2020-07-15</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">columnas_valor</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;fecha_creacion&quot;</span><span class="p">:[</span><span class="s2">&quot;2018-07-15&quot;</span><span class="p">,</span><span class="s2">&quot;+&quot;</span><span class="p">]}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Filtrar bases con fecha inicial el 15 de Enero de 2020 y fecha final de 15 de Febrero de 2020</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">columnas_valor</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;fecha_creacion&quot;</span><span class="p">:[</span><span class="s2">&quot;2020-01-15&quot;</span><span class="p">,</span><span class="s2">&quot;2020-02-15&quot;</span><span class="p">]}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Filtrar bases cuya descripción incluya los términos &#39;economia&#39; y &#39;ambiente&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">columnas_valor</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;descripcion&quot;</span><span class="p">:[</span><span class="s2">&quot;economia&quot;</span><span class="p">,</span><span class="s2">&quot;ambiente&quot;</span><span class="p">]}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Filtrar bases que tengan entre 100 y 10000 filas y más de 10 columnas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">columnas_valor</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;filas&quot;</span><span class="p">:[</span><span class="mi">100</span><span class="p">,</span><span class="mi">10000</span><span class="p">],</span> <span class="s2">&quot;columnas&quot;</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span><span class="s2">&quot;+&quot;</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="ejemplo-cargar-base">
+<h2>Ejemplo cargar_base<a class="headerlink" href="#ejemplo-cargar-base" title="Enlazar permanentemente con este título"></a></h2>
+<p>Se conecta al API de Socrata y retorna la base de datos descargada del Portal de Datos Abiertos como dataframe. Ver documentación <a class="reference internal" href="#datos_gov.DatosGov.cargar_base" title="datos_gov.DatosGov.cargar_base"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DatosGov.cargar_base()</span></code></a></p>
+<p>Para la descarga de una base de datos del portal de datos abiertos, requerimos conocer con anterioridad su api_id, en este ejemplo bajaremos los primeros 1.000 registros de la base de datos denominada “SECOP II - Contratos Electrónicos”</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se importan las funciones de la librería</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">leila</span> <span class="kn">import</span> <span class="n">datos_gov</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se invoca la función para descargar la base de datos usando el api_id de interés</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">base_datos_abiertos</span> <span class="o">=</span> <span class="n">datos_gov</span><span class="o">.</span><span class="n">cargar_base</span><span class="p">(</span><span class="s2">&quot;jbjy-vk9h&quot;</span><span class="p">,</span> <span class="n">limite_filas</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Procedemos a consultar los resultados obtenidos</p>
+<blockquote>
+<div><blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Consultados los datos de los 5 primeros registros obtenidos</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">base_datos_abiertos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="3%" />
+<col width="44%" />
+<col width="6%" />
+<col width="13%" />
+<col width="6%" />
+<col width="22%" />
+<col width="6%" />
+<col width="2%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Index</th>
+<th class="head">nombre_entidad</th>
+<th class="head">nit_entidad</th>
+<th class="head">departamento</th>
+<th class="head">ciudad</th>
+<th class="head">localizacion</th>
+<th class="head">orden</th>
+<th class="head">…</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>ESTABLECIMIENTO PENITENCIARIO DE MEDIANA SEGURIDAD Y CARCELARIO DE PENSILVANIA CALDAS</td>
+<td>810001393</td>
+<td>Caldas</td>
+<td>Pensilvania</td>
+<td>Colombia, Caldas , Pensilvania, Manzanares</td>
+<td>Nacional</td>
+<td>…</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>SUBRED INTEGRADA DE SERVICIOS DE SALUD SUR E.S.E</td>
+<td>9009585649</td>
+<td>Distrito Capital de Bogotá</td>
+<td>Bogotá</td>
+<td>Colombia, Bogotá, Bogotá</td>
+<td>Territorial</td>
+<td>…</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>ESCUELA NAVAL DE SUBOFICIALES ARC BARRANQUILLA</td>
+<td>800141653</td>
+<td>Atlántico</td>
+<td>Barranquilla</td>
+<td>Colombia, Atlántico , Barranquilla</td>
+<td>Nacional</td>
+<td>…</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>INSTITUTO GEOGRÁFICO AGUSTÍN CODAZZI</td>
+<td>899999004</td>
+<td>Distrito Capital de Bogotá</td>
+<td>No Definido</td>
+<td>Colombia, Bogotá</td>
+<td>Nacional</td>
+<td>…</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>E.S.E. HOSPITAL UNIVERSITARIO HERNANDO MONCALEANO PERDOMO DE NEIVA</td>
+<td>891180268</td>
+<td>Huila</td>
+<td>Neiva</td>
+<td>Colombia, Huila, Neiva</td>
+<td>Territorial</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
 </div>
 
 

@@ -1,9 +1,9 @@
 Ejemplos - Calidad datos
 ========================
 
-calidad_datos.CantidadDuplicados
---------------------------------
-Retorna el porcentaje/número de filas o columnas duplicadas (repetidas) en el dataframe. Ver documentación :py:meth:`calidad_datos.CalidadDatos.CantidadDuplicados`
+Ejemplo CantidadDuplicados
+--------------------------
+Retorna el porcentaje/número de filas o columnas duplicadas (repetidas) en el dataframe. Ver documentación :py:meth:`CalidadDatos.CantidadDuplicados`
 
     .. code-block:: python
 
@@ -30,9 +30,9 @@ Retorna el porcentaje/número de filas o columnas duplicadas (repetidas) en el d
 De acuerdo a los resultados obtenidos vemos que la base de datos de ejemplo presenta 10 filas duplicadas y el 8.3% (2 de 24) de las columnas duplicadas.
 
 
-calidad_datos.CorrelacionCategoricas
-------------------------------------
-Genera una matriz de correlación entre las variables de tipo categóricas. Ver documentación :py:meth:`calidad_datos.CalidadDatos.CorrelacionCategoricas`
+Ejemplo CorrelacionCategoricas
+------------------------------
+Genera una matriz de correlación entre las variables de tipo categóricas. Ver documentación :py:meth:`CalidadDatos.CorrelacionCategoricas`
 
 Procedemos a calcular la correlación de variables tipo categóricas, en este caso utilizaremos el método de cramer y limitaremos el cálculo a las variables 'Atención', 'Sexo', 'Tipo' y 'Estado'.
 
@@ -58,9 +58,9 @@ Procedemos a calcular la correlación de variables tipo categóricas, en este ca
     ========  ========  ========  ========  ========
 
 
-calidad_datos.CorrelacionNumericas
-----------------------------------
-Genera una matriz de correlación entre las variables de tipo numérico. Ver documentación :py:meth:`calidad_datos.CalidadDatos.CorrelacionNumericas`
+Ejemplo CorrelacionNumericas
+----------------------------
+Genera una matriz de correlación entre las variables de tipo numérico. Ver documentación :py:meth:`CalidadDatos.CorrelacionNumericas`
 
 Procedemos a calcular la correlación de variables tipo numéricas, en este caso utilizaremos el método de spearman.
 
@@ -85,9 +85,9 @@ Procedemos a calcular la correlación de variables tipo numéricas, en este caso
     ==========  ========  ========  ==========
 
 
-calidad_datos.DescripcionCategoricas
-------------------------------------
-Genera una tabla con los primeros 10 valores más frecuentes de las columnas categóricas del dataframe, además calcula su frecuencia y porcentaje dentro del total de observaciones. Incluye los valores faltantes. Ver documentación :py:meth:`calidad_datos.CalidadDatos.DescripcionCategoricas`
+Ejemplo DescripcionCategoricas
+------------------------------
+Genera una tabla con los primeros 10 valores más frecuentes de las columnas categóricas del dataframe, además calcula su frecuencia y porcentaje dentro del total de observaciones. Incluye los valores faltantes. Ver documentación :py:meth:`CalidadDatos.DescripcionCategoricas`
 
 Procedemos a generar la tabla descriptiva de variables tipo categóricas, en este caso limitaremos el cálculo a las variables 'Atención' y 'Pertenencia etnica'.
 
@@ -124,9 +124,9 @@ Procedemos a generar la tabla descriptiva de variables tipo categóricas, en est
     =====  ==================  ================================  ==========  =============================
 
 
-calidad_datos.DescripcionNumericas
-----------------------------------
-Calcula estadísticas descriptivas de cada columna numérica. Ver documentación :py:meth:`calidad_datos.CalidadDatos.DescripcionNumericas`
+Ejemplo DescripcionNumericas
+----------------------------
+Calcula estadísticas descriptivas de cada columna numérica. Ver documentación :py:meth:`CalidadDatos.DescripcionNumericas`
 
     .. code-block:: python
 
@@ -149,9 +149,9 @@ Calcula estadísticas descriptivas de cada columna numérica. Ver documentación
     ==========  =======  ==========  ==========  ===  =====  =====  =====  ======  =======  ==============  ==============  ==============
 
 
-calidad_datos.EmparejamientoDuplicados
---------------------------------------
-Retorna las columnas o filas que presenten valores duplicados del dataframe. Ver documentación :py:meth:`calidad_datos.CalidadDatos.EmparejamientoDuplicados`
+Ejemplo EmparejamientoDuplicados
+--------------------------------
+Retorna las columnas o filas que presenten valores duplicados del dataframe. Ver documentación :py:meth:`CalidadDatos.EmparejamientoDuplicados`
 
     .. code-block:: python
 
@@ -189,9 +189,9 @@ Retorna las columnas o filas que presenten valores duplicados del dataframe. Ver
     =====  ===============  ===============  ===============  ===============  ===============  ===============  ===============  ===============  ===============
 
   
-calidad_datos.Memoria
----------------------
-Calcula el tamaño de la base de datos en memoria (megabytes). Ver documentación :py:meth:`calidad_datos.CalidadDatos.Memoria`
+Ejemplo Memoria
+---------------
+Calcula el tamaño de la base de datos en memoria (megabytes). Ver documentación :py:meth:`CalidadDatos.Memoria`
 
     .. code-block:: python
 
@@ -207,9 +207,9 @@ Calcula el tamaño de la base de datos en memoria (megabytes). Ver documentació
         12.01
 
 
-calidad_datos.Resumen
----------------------
-Retorna una tabla con información general de la base de datos. Ver documentación :py:meth:`calidad_datos.CalidadDatos.Resumen`
+Ejemplo Resumen
+---------------
+Retorna una tabla con información general de la base de datos. Ver documentación :py:meth:`CalidadDatos.Resumen`
     
     .. code-block:: python
 
@@ -240,9 +240,9 @@ Retorna una tabla con información general de la base de datos. Ver documentaci�
     Uso en memoria de la base en megabytes (aproximado)     12
     ===================================================  =====
 
-calidad_datos.TipoColumnas
---------------------------
-Retorna el tipo de dato de cada columna del dataframe. Ver documentación :py:meth:`calidad_datos.CalidadDatos.TipoColumnas`
+Ejemplo TipoColumnas
+--------------------
+Retorna el tipo de dato de cada columna del dataframe. Ver documentación :py:meth:`CalidadDatos.TipoColumnas`
 
 
     .. code-block:: python
@@ -287,9 +287,9 @@ Retorna el tipo de dato de cada columna del dataframe. Ver documentación :py:me
     ==============================  ======================  ======================  ======================================================  ==================================================
 
 
-calidad_datos.ValoresExtremos
------------------------------
-Calcula el porcentaje o cantidad de outliers de cada columna numérica (las columnas con números en formato string se intentarán transformar a columnas numéricas). Ver documentación :py:meth:`calidad_datos.CalidadDatos.ValoresExtremos`
+Ejemplo ValoresExtremos
+-----------------------
+Calcula el porcentaje o cantidad de outliers de cada columna numérica (las columnas con números en formato string se intentarán transformar a columnas numéricas). Ver documentación :py:meth:`CalidadDatos.ValoresExtremos`
 
     .. code-block:: python
 
@@ -312,9 +312,9 @@ Calcula el porcentaje o cantidad de outliers de cada columna numérica (las colu
     ============  ========
 
 
-calidad_datos.ValoresFaltantes
-------------------------------
-Calcula el porcentaje/número de valores faltantes de cada columna del dataframe. Ver documentación :py:meth:`calidad_datos.CalidadDatos.ValoresFaltantes`
+Ejemplo ValoresFaltantes
+------------------------
+Calcula el porcentaje/número de valores faltantes de cada columna del dataframe. Ver documentación :py:meth:`CalidadDatos.ValoresFaltantes`
 
     .. code-block:: python
 
@@ -358,9 +358,9 @@ Calcula el porcentaje/número de valores faltantes de cada columna del dataframe
     =============================  ========
 
 
-calidad_datos.ValoresUnicos
----------------------------
-Calcula la cantidad de valores únicos de cada columna del dataframe. Ver documentación :py:meth:`calidad_datos.CalidadDatos.ValoresUnicos`
+Ejemplo ValoresUnicos
+---------------------
+Calcula la cantidad de valores únicos de cada columna del dataframe. Ver documentación :py:meth:`CalidadDatos.ValoresUnicos`
 
     .. code-block:: python
 
@@ -404,9 +404,9 @@ Calcula la cantidad de valores únicos de cada columna del dataframe. Ver docume
     =============================  =====
 
 
-calidad_datos.VarianzaEnPercentil
----------------------------------
-Retorna las columnas numéricas cuyo percentil_inferior sea igual a su percentil_superior. Ver documentación :py:meth:`calidad_datos.CalidadDatos.VarianzaEnPercentil`
+Ejemplo VarianzaEnPercentil
+---------------------------
+Retorna las columnas numéricas cuyo percentil_inferior sea igual a su percentil_superior. Ver documentación :py:meth:`CalidadDatos.VarianzaEnPercentil`
 
     .. code-block:: python
 

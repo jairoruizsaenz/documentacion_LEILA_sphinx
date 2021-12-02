@@ -1,9 +1,12 @@
 Ejemplos - Datos gov
 ====================
 
-DatosGov.tabla_inventario
--------------------------
-Se conecta al API de Socrata y retorna la base de datos Asset Inventory descargada del Portal de Datos Abiertos como dataframe. Este conjunto de datos es un inventario de los recursos en el sitio. Ver documentación :py:meth:`datos_gov.tabla_inventario`
+Ejemplo tabla_inventario
+------------------------
+
+Descargar tabla inventario
+++++++++++++++++++++++++++
+Se conecta al API de Socrata y retorna la base de datos Asset Inventory descargada del Portal de Datos Abiertos como dataframe. Este conjunto de datos es un inventario de los recursos en el sitio. Ver documentación :py:meth:`DatosGov.tabla_inventario`
 
     .. code-block:: python
 
@@ -27,11 +30,8 @@ A continuación verificamos el tipo de objeto de la variable **inventario** y su
         >>> inventario.shape
         (19729, 25)
 
-
-DatosGov.filtrar_tabla
-----------------------
-Permite filtrar la base de datos de tabla de inventario de acuerdo a diferentes términos de búsqueda. Como son fechas, textos y otros. Ver documentación :py:meth:`datos_gov.filtrar_tabla`
-
+Filtrar tabla inventario
+++++++++++++++++++++++++
 Para realizar el filtro de la base de datos de la tabla de inventario debemos tener en cuenta la información disponible, primero consultamos los campos de consulta que podemos usar.
 
     .. code-block:: python
@@ -111,10 +111,9 @@ A continuación se presentan algunas variaciones que pueden utilizar al filtrar 
         >>> # Filtrar bases que tengan entre 100 y 10000 filas y más de 10 columnas
         >>> columnas_valor = {"filas":[100,10000], "columnas":[10,"+"]}
 
-
-DatosGov.cargar_base
---------------------
-Se conecta al API de Socrata y retorna la base de datos descargada del Portal de Datos Abiertos como dataframe. Ver documentación :py:meth:`datos_gov.cargar_base`
+Ejemplo cargar_base
+-------------------
+Se conecta al API de Socrata y retorna la base de datos descargada del Portal de Datos Abiertos como dataframe. Ver documentación :py:meth:`DatosGov.cargar_base`
 
 Para la descarga de una base de datos del portal de datos abiertos, requerimos conocer con anterioridad su api_id, en este ejemplo bajaremos los primeros 1.000 registros de la base de datos denominada 'SECOP II - Contratos Electrónicos'
 

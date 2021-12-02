@@ -10,3 +10,7 @@ Este módulo se enfoca en analizar cualquier base de datos (dataframe) de intere
    :undoc-members:
    :show-inheritance:
    :exclude-members: correlacion_cramerv
+
+.. include:: ../ejemplos/header_ejemplos_2.rst
+.. include:: ../ejemplos/ejemplos_calidad_datos.rst
+    :start-line: 3

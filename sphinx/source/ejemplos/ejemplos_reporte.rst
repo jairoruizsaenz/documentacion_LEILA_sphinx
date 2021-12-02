@@ -1,10 +1,10 @@
 Ejemplos - Reporte
 ========================
 
-reporte.generar_reporte
+Ejemplo generar_reporte
 -----------------------
 
-Crea un reporte de calidad de datos en formato HTML.
+Crea un reporte de calidad de datos en formato HTML. Ver documentación :py:meth:`reporte.generar_reporte`
 
     .. code-block:: python
 

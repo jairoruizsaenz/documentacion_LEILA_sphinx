@@ -48,7 +48,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduccion.html">Introducción</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../instalacion.html">Instalación</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../intro_ejemplos.html">Ejemplos</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Módulos y funciones:</span></p>
 <ul>
@@ -82,9 +81,11 @@
              
   <div class="section" id="ejemplos-datos-gov">
 <h1>Ejemplos - Datos gov<a class="headerlink" href="#ejemplos-datos-gov" title="Enlazar permanentemente con este título"></a></h1>
-<div class="section" id="datosgov-tabla-inventario">
-<h2>DatosGov.tabla_inventario<a class="headerlink" href="#datosgov-tabla-inventario" title="Enlazar permanentemente con este título"></a></h2>
-<p>Se conecta al API de Socrata y retorna la base de datos Asset Inventory descargada del Portal de Datos Abiertos como dataframe. Este conjunto de datos es un inventario de los recursos en el sitio. Ver documentación <code class="xref py py-meth docutils literal notranslate"><span class="pre">datos_gov.tabla_inventario()</span></code></p>
+<div class="section" id="ejemplo-tabla-inventario">
+<h2>Ejemplo tabla_inventario<a class="headerlink" href="#ejemplo-tabla-inventario" title="Enlazar permanentemente con este título"></a></h2>
+<div class="section" id="descargar-tabla-inventario">
+<h3>Descargar tabla inventario<a class="headerlink" href="#descargar-tabla-inventario" title="Enlazar permanentemente con este título"></a></h3>
+<p>Se conecta al API de Socrata y retorna la base de datos Asset Inventory descargada del Portal de Datos Abiertos como dataframe. Este conjunto de datos es un inventario de los recursos en el sitio. Ver documentación <code class="xref py py-meth docutils literal notranslate"><span class="pre">DatosGov.tabla_inventario()</span></code></p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se importan las funciones de la librería</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">leila</span> <span class="kn">import</span> <span class="n">datos_gov</span>
@@ -108,9 +109,8 @@
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="datosgov-filtrar-tabla">
-<h2>DatosGov.filtrar_tabla<a class="headerlink" href="#datosgov-filtrar-tabla" title="Enlazar permanentemente con este título"></a></h2>
-<p>Permite filtrar la base de datos de tabla de inventario de acuerdo a diferentes términos de búsqueda. Como son fechas, textos y otros. Ver documentación <code class="xref py py-meth docutils literal notranslate"><span class="pre">datos_gov.filtrar_tabla()</span></code></p>
+<div class="section" id="filtrar-tabla-inventario">
+<h3>Filtrar tabla inventario<a class="headerlink" href="#filtrar-tabla-inventario" title="Enlazar permanentemente con este título"></a></h3>
 <p>Para realizar el filtro de la base de datos de la tabla de inventario debemos tener en cuenta la información disponible, primero consultamos los campos de consulta que podemos usar.</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Consultamos las columnas de la base &#39;inventario&#39;</span>
@@ -223,9 +223,10 @@
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="datosgov-cargar-base">
-<h2>DatosGov.cargar_base<a class="headerlink" href="#datosgov-cargar-base" title="Enlazar permanentemente con este título"></a></h2>
-<p>Se conecta al API de Socrata y retorna la base de datos descargada del Portal de Datos Abiertos como dataframe. Ver documentación <code class="xref py py-meth docutils literal notranslate"><span class="pre">datos_gov.cargar_base()</span></code></p>
+</div>
+<div class="section" id="ejemplo-cargar-base">
+<h2>Ejemplo cargar_base<a class="headerlink" href="#ejemplo-cargar-base" title="Enlazar permanentemente con este título"></a></h2>
+<p>Se conecta al API de Socrata y retorna la base de datos descargada del Portal de Datos Abiertos como dataframe. Ver documentación <code class="xref py py-meth docutils literal notranslate"><span class="pre">DatosGov.cargar_base()</span></code></p>
 <p>Para la descarga de una base de datos del portal de datos abiertos, requerimos conocer con anterioridad su api_id, en este ejemplo bajaremos los primeros 1.000 registros de la base de datos denominada “SECOP II - Contratos Electrónicos”</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se importan las funciones de la librería</span>
