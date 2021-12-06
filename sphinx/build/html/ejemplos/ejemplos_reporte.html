@@ -84,18 +84,77 @@
 <div class="section" id="ejemplo-generar-reporte">
 <h2>Ejemplo generar_reporte<a class="headerlink" href="#ejemplo-generar-reporte" title="Enlazar permanentemente con este título"></a></h2>
 <p>Crea un reporte de calidad de datos en formato HTML. Ver documentación <a class="reference internal" href="../funciones/reporte.html#reporte.generar_reporte" title="reporte.generar_reporte"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reporte.generar_reporte()</span></code></a></p>
+<p>En este ejemplo generaremos el reporte a partir de un api_id, este caso corresponde a los casos positivos de COVID-19 reportados en Colombia en el Portal de Datos Abiertos.</p>
+<p>Teniendo en cuenta que se trata de un conjunto de datos con muchos registros, usamos el argumento limite_filas para
+limitar la descarga de información a solo los primeros 1.000 registros.</p>
+<p>El título del reporte será “Casos positivos de COVID-19 en Colombia (primeros 1000 registros)” y será guardado con el nombre reporte_calidad_COVID.html</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se importan las funciones de la librería</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se importa la función generar_reporte del módulo de reporte</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">leila.reporte</span> <span class="kn">import</span> <span class="n">generar_reporte</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se invoca la función para generar el reporte de calidad de datos</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">generar_reporte</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df_datos</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>                <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;Perfilamiento datos COVID-19 - Colombia&#39;</span><span class="p">,</span>
-<span class="gp">&gt;&gt;&gt; </span>                <span class="n">archivo</span><span class="o">=</span><span class="s1">&#39;perfilamiento.html&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">generar_reporte</span><span class="p">(</span><span class="n">datos</span><span class="o">=</span><span class="s2">&quot;gt2j-8ykr&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;Casos positivos de COVID-19 en Colombia (primeros 1000 registros)&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                <span class="n">archivo</span><span class="o">=</span><span class="s1">&#39;ejemplo_reporte__API_datos_abiertos.html&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                <span class="n">limite_filas</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="go">--------------------------------------------------------------------------------------------</span>
+<span class="go">No hay columnas duplicadas</span>
+<span class="go">--------------------------------------------------------------------------------------------</span>
+<span class="go">Se ha generado el reporte &quot;ejemplo_reporte__API_datos_abiertos.html&quot;</span>
+<span class="go">09:00:11 AM (00 min 6 seg)</span>
+<span class="go">--------------------------------------------------------------------------------------------</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Si desea excluir una sección del reporte lo puede hacer mediante el parámetro secciones.
+En el siguiente ejemplo se excluyó del reporte la sección «correlaciones», y de la sección «Estadísticas específicas»
+solo se incluyeron las pestañas «Tipo de las columnas» y «Frecuencia de categorías»</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se importa la función generar_reporte del módulo de reporte</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">leila.reporte</span> <span class="kn">import</span> <span class="n">generar_reporte</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">generar_reporte</span><span class="p">(</span><span class="n">datos</span><span class="o">=</span><span class="s2">&quot;bign-27m7&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                <span class="n">titulo</span><span class="o">=</span><span class="s2">&quot;Reporte visas&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                <span class="n">archivo</span><span class="o">=</span><span class="s1">&#39;ejemplo_reporte__secciones.html&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                <span class="n">secciones</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;generales&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;muestra_datos&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;correlaciones&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                           <span class="s1">&#39;especificas&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;tipo&#39;</span><span class="p">,</span> <span class="s1">&#39;frecuencias&#39;</span><span class="p">]})</span>
+
+<span class="go">--------------------------------------------------------------------------------------------</span>
+<span class="go">El conjunto de datos no tiene columnas numéricas</span>
+<span class="go">--------------------------------------------------------------------------------------------</span>
+<span class="go">Se ha generado el reporte &quot;ejemplo_reporte__secciones.html&quot;</span>
+<span class="go">09:00:20 AM (00 min 0 seg)</span>
+<span class="go">--------------------------------------------------------------------------------------------</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>También se puede generar el reporte a partir de un dataframe o indicando la ruta de un archivo XLSX o CSV. Para esto solo se requiere cambiar el parámetro datos.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se importa la función generar_reporte del módulo de reporte</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">leila.reporte</span> <span class="kn">import</span> <span class="n">generar_reporte</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se llama la función para generar el reporte</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">generar_reporte</span><span class="p">(</span><span class="n">datos</span><span class="o">=</span><span class="s2">&quot;dataset ejemplos.xlsx&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;Reporte de prueba archivo XLSX&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                <span class="n">archivo</span><span class="o">=</span><span class="s1">&#39;ejemplo_reporte__archivo_XLSX.html&#39;</span><span class="p">)</span>
 
 <span class="go">--------------------------------------------------------------</span>
-<span class="go">Se ha generado el reporte &quot;perfilamiento.html&quot;</span>
-<span class="go">11:52:29 AM (01 min 4 seg)</span>
+<span class="go">Se ha generado el reporte &quot;ejemplo_reporte__archivo_XLSX.html&quot;</span>
+<span class="go">09:00:38 AM (00 min 20 seg)</span>
+<span class="go">--------------------------------------------------------------</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se importa la función generar_reporte del módulo de reporte</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">leila.reporte</span> <span class="kn">import</span> <span class="n">generar_reporte</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se llama la función para generar el reporte</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">generar_reporte</span><span class="p">(</span><span class="n">datos</span><span class="o">=</span><span class="n">df_datos</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                <span class="n">titulo</span><span class="o">=</span><span class="s1">&#39;Perfilamiento datos COVID-19 - Colombia&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                <span class="n">archivo</span><span class="o">=</span><span class="s1">&#39;ejemplo_reporte__dataframe.html&#39;</span><span class="p">)</span>
+
+<span class="go">--------------------------------------------------------------</span>
+<span class="go">Se ha generado el reporte &quot;ejemplo_reporte__dataframe.html&quot;</span>
+<span class="go">09:01:22 AM (00 min 22 seg)</span>
 <span class="go">--------------------------------------------------------------</span>
 </pre></div>
 </div>
