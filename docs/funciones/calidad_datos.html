@@ -69,7 +69,7 @@
 <li class="toctree-l1"><a class="reference internal" href="datos_gov.html">Datos gov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reporte.html">Reporte</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Prueba:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Otros:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../control_de_cambios.html">Control de cambios</a></li>
 </ul>
@@ -113,7 +113,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><ul class="first last simple">
 <li><strong>datos</strong> (<em>str</em><em>, </em><em>pandas.DataFrame</em><em>, </em><em>leila.DatosGov</em>) – Se acepta cualquier ruta o path a archivos tipo <cite>.xlsx</cite>         o <cite>.csv</cite> (recomendado).        Si desea pasar un <cite>DataFrame</cite> de pandas, LEILA soporta este tipo         de entrada.
-LEILA también soporta como entrada objectos del tipo         <cite>leila.DatosGov</cite>. Para este tipo de entrada LEILA tendrá en el         el futuro funcionalidades extendidas de calidad de datos con base         a los metadatos del conjunto de datos descargado del portal         datos.gov.co.</li>
+LEILA también soporta como entrada objectos del tipo         <cite>leila.DatosGov</cite>. Para este tipo de entrada LEILA tendrá en el         futuro funcionalidades extendidas de calidad de datos con base         a los metadatos del conjunto de datos descargado del portal         datos.gov.co.</li>
 <li><strong>castDatos</strong> (<em>bool</em><em>, </em><em>opcional</em>) – Indica si se desean convertir las columnas al         mejor tipo de datos para cada columna según la función         <cite>convert_dtypes</cite> de Pandas. Por ejemplo si una columna es de         tipo <cite>string</cite>, pero sus datos son en su mayoría números, se         convierte a columna númerica. Valor por defecto: <cite>True</cite>.</li>
 <li><strong>diccionarioCast</strong> (<em>dict</em><em> , </em><em>opcional</em>) – Diccionario donde se especifican los tipos         de datos a los que se desean convertir las columnas dentro         del conjunto de datos. Por ejemplo, {“col1”: “booleano”,         “edad”:”numerico”}, donde <cite>col1</cite> y <cite>edad</cite> son columnas de la base         de datos. Los valores a los que se pueden convertir son:         [“string”, “numerico”, “booleano”, “fecha”, “categorico”]. Valor         por defecto: <cite>None</cite>.</li>
 <li><strong>errores</strong> (<em>{&quot;ignore&quot;</em><em>, </em><em>&quot;coerce&quot;</em><em>, </em><em>&quot;raise&quot;}</em><em>, </em><em>opcional</em>) – Indica qué hacer con las columnas cuyo tipo no se         puede cambiar al solicitado en <cite>diccionarioCast</cite>. Valor por         defecto: <cite>«ignore»</cite>.</li>
@@ -757,7 +757,7 @@ LEILA también soporta como entrada objectos del tipo         <cite>leila.DatosG
 </div>
 <div class="section" id="estadisticas-descriptivas-de-variables-numericas">
 <h2>Estadísticas descriptivas de variables numéricas<a class="headerlink" href="#estadisticas-descriptivas-de-variables-numericas" title="Enlazar permanentemente con este título"></a></h2>
-<p>El método <a class="reference internal" href="#calidad_datos.CalidadDatos.DescripcionNumericas" title="calidad_datos.CalidadDatos.DescripcionNumericas"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CalidadDatos.DescripcionNumericas()</span></code></a> permite calcular estadísticas descriptivas para variables numéricas tales como el promedio, la desviación estánar, el mínimo, máximo, mediana (percentil 50), valores valtantes y extremos.</p>
+<p>El método <a class="reference internal" href="#calidad_datos.CalidadDatos.DescripcionNumericas" title="calidad_datos.CalidadDatos.DescripcionNumericas"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CalidadDatos.DescripcionNumericas()</span></code></a> permite calcular estadísticas descriptivas para variables numéricas tales como el promedio, la desviación estándar, el mínimo, máximo, mediana (percentil 50), valores faltantes y extremos.</p>
 <p>El objetivo de estos cálculos es verificar si las variables del conjunto de datos contienen los valores esperados o si existen errores en la digitación de los valores</p>
 <p>El ejemplo abajo muestra las estadísticas descriptivas para las variables “Edad”, “Edad_2” y “Edad meses”</p>
 <blockquote>

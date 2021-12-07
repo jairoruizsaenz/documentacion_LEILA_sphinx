@@ -56,11 +56,15 @@
 <li class="toctree-l1"><a class="reference internal" href="calidad_datos.html">Calidad datos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datos_gov.html">Datos gov</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Reporte</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#generando-un-reporte">Generando un reporte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generando-un-reporte">Generando un reporte</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#personalizar-secciones">Personalizar secciones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reporte-usando-archivos-xlsx-csv-o-dataframes">Reporte usando archivos XLSX, CSV o DataFrames</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Prueba:</span></p>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Otros:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../control_de_cambios.html">Control de cambios</a></li>
 </ul>
@@ -88,7 +92,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="id1">
+  <span class="target" id="reporte"></span><div class="section" id="id1">
 <h1>Reporte<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título"></a></h1>
 <p>La función <code class="docutils literal notranslate"><span class="pre">generar_reporte(base)</span></code> busca facilitar el proceso de entendimiento de la calidad de datos de una base de datos de interés, para esto genera un reporte en formato HTML el cual consolida las funciones de calidad de datos implementadas en el módulo <a class="reference internal" href="calidad_datos.html#calidad-datos"><span class="std std-ref">leila.calidad_datos</span></a> y <a class="reference internal" href="datos_gov.html#datos-gov"><span class="std std-ref">leila.datos_gov</span></a>, facilitando la consulta de los resultados obtenidos del análisis exploratorio en un archivo independiente.</p>
 <span class="target" id="module-reporte"></span><dl class="py function">
@@ -103,11 +107,11 @@
 <li><strong>datos</strong> – (str, pandas.DataFrame, leila.CalidadDatos) Se acepta cualquier ruta o path a archivos tipo <cite>.xlsx</cite>             o <cite>.csv</cite> (recomendado). Si desea pasar un <cite>DataFrame</cite> de pandas, LEILA soporta este tipo             de entrada. LEILA también soporta como entrada objectos del tipo             <cite>leila.CalidadDatos</cite>. También se acepta la identificación de la base de datos asociado             con la API de Socrata (de Datos Abiertos).</li>
 <li><strong>titulo</strong> – (str) valor por defecto: “Reporte perfilamiento”. Título del reporte a generar.</li>
 <li><strong>archivo</strong> – (str) valor por defecto: “perfilamiento.html”. Ruta donde guardar el reporte.</li>
-<li><strong>secciones</strong> – (dic) Diccionario indicando cuales secciones incluir en el reporte. Las opciones son las siguientes:          <ul> 
+<li><strong>secciones</strong> – (dic) Diccionario indicando que secciones incluir en el reporte. <a class="reference internal" href="#personalizar-secciones"><span class="std std-ref">Ver ejemplo</span></a> <br> Las opciones son las siguientes:          <ul> 
 <li> “generales”: (bool) {True, False}. Valor por defecto: True. Indica si desea incluir la sección de “Estadísticas generales” en el reporte. </li> 
 <li> “muestra_datos”: (bool) {True, False}. Valor por defecto: True. Indica si desea incluir la sección “Muestra de datos” en el reporte. </li>
-<li> “correlaciones”: (bool/list) {True, False, Lista}. Valor por defecto: True. Puede tomar un valor booleano indicando                 si desea incluir la sección de “Correlaciones” en el reporte. O mediante una lista de strings indicar                 cuál pestaña de la sección incluir. Valores posibles: “pearson”, “kendall”, “spearman”, “cramer”, “phik” </li>
-<li> “especificas”: (bool/list) {True, False, Lista}. Valor por defecto: [“tipo”, “frecuencias”, “duplicados_columnas”, “descriptivas”].                 Puede tomar un valor booleano indicando si desea incluir la sección de “Estadísticas específicas” en el reporte.                 O mediante una lista de strings indicar cuál pestaña de la sección incluir. Valores posibles: “tipo”, “frecuencias”,                 “duplicados”, “duplicados_filas”, “duplicados_columnas”, “descriptivas” </li>
+<li> “correlaciones”: (bool/list) {True, False, Lista}. Valor por defecto: True. Puede tomar un valor booleano indicando                 si desea incluir la sección de “Correlaciones” en el reporte y todas sus pestañas. O mediante una lista de strings indicar                 que pestaña de la sección incluir. Valores posibles: “pearson”, “kendall”, “spearman”, “cramer”, “phik” </li>
+<li> “especificas”: (bool/list) {True, False, Lista}. Valor por defecto: [“tipo”, “frecuencias”, “duplicados_columnas”, “descriptivas”].                 Puede tomar un valor booleano indicando si desea incluir la sección de “Estadísticas específicas” en el reporte y todas sus pestañas.                 O mediante una lista de strings indicar que pestaña de la sección incluir. Valores posibles: “tipo”, “frecuencias”,                 “duplicados”, “duplicados_filas”, “duplicados_columnas”, “descriptivas” </li>
 </ul></li>
 </ul>
 </td>
@@ -160,6 +164,8 @@ limitar la descarga de información a solo los primeros 1.000 registros.</p>
 </pre></div>
 </div>
 </div></blockquote>
+<div class="section" id="personalizar-secciones">
+<h3>Personalizar secciones<a class="headerlink" href="#personalizar-secciones" title="Enlazar permanentemente con este título"></a></h3>
 <p>Si desea excluir una sección del reporte lo puede hacer mediante el parámetro secciones.
 En el siguiente ejemplo se excluyó del reporte la sección “correlaciones”, y de la sección “Estadísticas específicas”
 solo se incluyeron las pestañas “Tipo de las columnas” y “Frecuencia de categorías”</p>
@@ -182,6 +188,9 @@ solo se incluyeron las pestañas “Tipo de las columnas” y “Frecuencia de c
 </pre></div>
 </div>
 </div></blockquote>
+</div>
+<div class="section" id="reporte-usando-archivos-xlsx-csv-o-dataframes">
+<h3>Reporte usando archivos XLSX, CSV o DataFrames<a class="headerlink" href="#reporte-usando-archivos-xlsx-csv-o-dataframes" title="Enlazar permanentemente con este título"></a></h3>
 <p>También se puede generar el reporte a partir de un dataframe o indicando la ruta de un archivo XLSX o CSV. Para esto solo se requiere cambiar el parámetro datos.</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se importa la función generar_reporte del módulo de reporte</span>
@@ -216,6 +225,7 @@ solo se incluyeron las pestañas “Tipo de las columnas” y “Frecuencia de c
 <div class="align-center figure" id="id2">
 <img alt="Ejemplo de reporte" src="https://github.com/ucd-dnp/leila/blob/gh-pages/sphinx/source/_static/image/vista_reporte.gif?raw=true" />
 <p class="caption"><span class="caption-text">Ejemplo de reporte</span><a class="headerlink" href="#id2" title="Enlace permanente a esta imagen"></a></p>
+</div>
 </div>
 </div>
 </div>

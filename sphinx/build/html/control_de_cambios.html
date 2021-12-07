@@ -56,9 +56,25 @@
 <li class="toctree-l1"><a class="reference internal" href="funciones/datos_gov.html">Datos gov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="funciones/reporte.html">Reporte</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Prueba:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Otros:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Control de cambios</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Control de cambios</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.2 (2021-12-09)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#agregado">Agregado</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cambiado">Cambiado</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#codigo">Código</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#repositorio">Repositorio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#memoria-y-tiempo-de-ejecucion">Memoria y tiempo de ejecución</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wiki-de-leila">Wiki de LEILA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obsoleto">Obsoleto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#borrado">Borrado</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arreglado">Arreglado</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -86,8 +102,83 @@
              
   <div class="section" id="control-de-cambios">
 <h1>Control de cambios<a class="headerlink" href="#control-de-cambios" title="Enlazar permanentemente con este título"></a></h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus eget tortor a laoreet. Vestibulum suscipit dui sit amet eros interdum, nec varius felis commodo. Pellentesque eget felis nec sem lobortis volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse sed magna vel metus consectetur suscipit. Pellentesque viverra ultricies convallis. Donec vitae consequat felis, a consectetur libero. Etiam varius tortor eu rutrum blandit. Aenean vehicula leo id rhoncus sollicitudin. Maecenas lobortis elit non aliquam ultricies. Duis non odio nec nibh elementum tincidunt. Aenean ac lectus massa. Proin tristique urna elementum viverra porta. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-<p>Mauris ut pretium nulla. Nam ac risus luctus ipsum euismod fermentum sit amet quis tortor. Donec nec odio augue. Sed facilisis nibh neque, sit amet rutrum elit fermentum id. Nunc vestibulum est eu mi tincidunt sollicitudin. Curabitur ut bibendum felis, quis interdum metus. Vestibulum dolor est, tempus a placerat ut, ornare in nisi. Aliquam vel gravida metus. Mauris a hendrerit risus. Donec luctus sem lectus, ut pulvinar tellus feugiat nec. Ut lacinia ante porta lectus pellentesque semper. Ut a euismod mi, eu molestie nunc. Aliquam rhoncus volutpat ligula. Fusce lobortis lorem vel lacus rutrum aliquet. Maecenas cursus varius dignissim.</p>
+<div class="section" id="id1">
+<h2>0.2 (2021-12-09)<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título"></a></h2>
+<div class="section" id="agregado">
+<h3>Agregado<a class="headerlink" href="#agregado" title="Enlazar permanentemente con este título"></a></h3>
+<ul class="simple">
+<li>Se agrega sección <em>Columnas en este conjunto de datos</em> en reportes generados para conjuntos del portal de <a class="reference external" href="https://www.datos.gov.co/" target="_blank">Datos Abiertos Colombia</a> mediante la función <a class="reference internal" href="funciones/reporte.html#reporte.generar_reporte" title="reporte.generar_reporte"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reporte.generar_reporte()</span></code></a> del módulo <a class="reference internal" href="funciones/reporte.html#id1"><span class="std std-ref">reporte</span></a>.</li>
+<li>Se agregó la función <a class="reference internal" href="funciones/datos_gov.html#datos_gov.DatosGov.metadatos" title="datos_gov.DatosGov.metadatos"><code class="xref py py-meth docutils literal notranslate"><span class="pre">datos_gov.DatosGov.metadatos()</span></code></a> para consultar los metadatos del conjunto de datos de interés publicado en el portal de <a class="reference external" href="https://www.datos.gov.co/" target="_blank">Datos Abiertos Colombia</a>.</li>
+<li>Se agregó la función <a class="reference internal" href="funciones/datos_gov.html#datos_gov.DatosGov.to_dataframe" title="datos_gov.DatosGov.to_dataframe"><code class="xref py py-meth docutils literal notranslate"><span class="pre">datos_gov.DatosGov.to_dataframe()</span></code></a> para retornar el conjunto de datos descargado del portal <a class="reference external" href="https://www.datos.gov.co/" target="_blank">Datos Abiertos Colombia</a> en formato <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></li>
+</ul>
+</div>
+<div class="section" id="cambiado">
+<h3>Cambiado<a class="headerlink" href="#cambiado" title="Enlazar permanentemente con este título"></a></h3>
+<div class="section" id="codigo">
+<h4>Código<a class="headerlink" href="#codigo" title="Enlazar permanentemente con este título"></a></h4>
+<ul class="simple">
+<li>Se reestructuró el módulo <code class="docutils literal notranslate"><span class="pre">datos_gov</span></code> en la clase <a class="reference internal" href="funciones/datos_gov.html#datos_gov.DatosGov" title="datos_gov.DatosGov"><code class="xref py py-class docutils literal notranslate"><span class="pre">datos_gov.DatosGov</span></code></a></li>
+<li>Se agregó parámetro <code class="docutils literal notranslate"><span class="pre">filtro</span></code> dentro de la función <a class="reference internal" href="funciones/datos_gov.html#datos_gov.DatosGov.tabla_inventario" title="datos_gov.DatosGov.tabla_inventario"><code class="xref py py-meth docutils literal notranslate"><span class="pre">datos_gov.DatosGov.tabla_inventario()</span></code></a> del módulo <a class="reference internal" href="funciones/datos_gov.html#datos-gov"><span class="std std-ref">datos_gov</span></a>, que permite filtrar por palabras clave.</li>
+<li>Se reemplazó el parámetro <code class="docutils literal notranslate"><span class="pre">df</span></code> por <code class="docutils literal notranslate"><span class="pre">datos</span></code> dentro de la función <a class="reference internal" href="funciones/reporte.html#reporte.generar_reporte" title="reporte.generar_reporte"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reporte.generar_reporte()</span></code></a></li>
+<li>Se agregó soporte para lectura directa de archivos tipo <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code>, y <code class="docutils literal notranslate"><span class="pre">.csv</span></code> por parte de la clase <a class="reference internal" href="funciones/calidad_datos.html#calidad_datos.CalidadDatos" title="calidad_datos.CalidadDatos"><code class="xref py py-class docutils literal notranslate"><span class="pre">calidad_datos.CalidadDatos</span></code></a></li>
+<li>Se agregó soporte para lectura directa de objetos tipo <a class="reference internal" href="funciones/datos_gov.html#datos_gov.DatosGov" title="datos_gov.DatosGov"><code class="xref py py-class docutils literal notranslate"><span class="pre">leila.DatosGov()</span></code></a> por parte de la clase <a class="reference internal" href="funciones/calidad_datos.html#calidad_datos.CalidadDatos" title="calidad_datos.CalidadDatos"><code class="xref py py-class docutils literal notranslate"><span class="pre">calidad_datos.CalidadDatos</span></code></a></li>
+<li>Se agregó parámetro <code class="docutils literal notranslate"><span class="pre">especificas</span></code> dentro de la función <a class="reference internal" href="funciones/reporte.html#reporte.generar_reporte" title="reporte.generar_reporte"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reporte.generar_reporte()</span></code></a>, que permite personalizar el reporte automático.</li>
+<li>Se agregó el parámetro <code class="docutils literal notranslate"><span class="pre">limite_filas</span></code> a las funciones <a class="reference internal" href="funciones/calidad_datos.html#calidad_datos.CalidadDatos.CantidadDuplicados" title="calidad_datos.CalidadDatos.CantidadDuplicados"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CantidadDuplicados</span></code></a> y <a class="reference internal" href="funciones/calidad_datos.html#calidad_datos.CalidadDatos.EmparejamientoDuplicados" title="calidad_datos.CalidadDatos.EmparejamientoDuplicados"><code class="xref py py-meth docutils literal notranslate"><span class="pre">EmparejamientoDuplicados</span></code></a> de la clase “CalidadDatos”. Este parámetro define el límite de filas que se tendrá en cuenta al calcular los duplicados por columnas (el valor por defecto es 30.000).</li>
+<li>Se ajustó el código de los siguientes métodos de la clase “CalidadDatos”, para no copiar el conjunto de datos de entrada y evitar problemas de memoria: CorrelacionCategoricas, DescripcionNumericas, DescripcionCategoricas, CantidadDuplicados, EmparejamientoDuplicados.</li>
+<li>Se adecuó el código de la librería al estilo PEP-8.</li>
+<li>Se ajustó el código del método “TipoColumnas” de la clase CalidadDatos para mejorar los tiempos de ejecución.</li>
+<li>Se adecuó el código de la clase CalidadDatos para que el tipo específico y el tipo general de las columnas se calculen cuando se crea la clase y no cuando se ejecutan los métodos que hacen uso de los tipos.</li>
+<li>Los módulos “calidad_datos” y “reporte” tendrán el nuevo parámetro <code class="docutils literal notranslate"><span class="pre">castDatos</span></code>, el cual indica si se desean convertir las columnas al mejor tipo de columna, según la función “convert_dtypes” de la librería Pandas. Este parámetro remplazará a <code class="docutils literal notranslate"><span class="pre">castNumero</span></code>, el cual será deprecado en un futuro.</li>
+</ul>
+</div>
+<div class="section" id="repositorio">
+<h4>Repositorio<a class="headerlink" href="#repositorio" title="Enlazar permanentemente con este título"></a></h4>
+<ul class="simple">
+<li>Se redactó guía en GitHub en español para reportar issues en la librería</li>
+<li>Se redactó guía en español para realizar colaboraciones y adiciones a la librería en GitHub</li>
+<li>Se añaden nuevos ejemplos de uso de la librería en la carpeta de <a class="reference external" href="https://github.com/ucd-dnp/leila/tree/master/ejemplos" target="_blank">ejemplos</a></li>
+<li>Se actualiza documentación de LEILA con respecto a los nuevos cambios.</li>
+</ul>
+</div>
+<div class="section" id="memoria-y-tiempo-de-ejecucion">
+<h4>Memoria y tiempo de ejecución<a class="headerlink" href="#memoria-y-tiempo-de-ejecucion" title="Enlazar permanentemente con este título"></a></h4>
+<ul class="simple">
+<li>Se mejoró los tiempos de ejecución para las funciones <a class="reference internal" href="funciones/calidad_datos.html#calidad_datos.CalidadDatos.CantidadDuplicados" title="calidad_datos.CalidadDatos.CantidadDuplicados"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CantidadDuplicados</span></code></a> y <a class="reference internal" href="funciones/calidad_datos.html#calidad_datos.CalidadDatos.EmparejamientoDuplicados" title="calidad_datos.CalidadDatos.EmparejamientoDuplicados"><code class="xref py py-meth docutils literal notranslate"><span class="pre">EmparejamientoDuplicados</span></code></a> de la clase <a class="reference internal" href="funciones/calidad_datos.html#calidad_datos.CalidadDatos" title="calidad_datos.CalidadDatos"><code class="xref py py-class docutils literal notranslate"><span class="pre">calidad_datos.CalidadDatos</span></code></a></li>
+<li>Se redujeron los tiempos de ejecución generales y los requisitos de memoria.</li>
+<li>Las funciones de la librería se pueden ejecutar para conjuntos de datos más grandes</li>
+<li>Las funciones generan resultados más rápidos para los mismos conjuntos de datos</li>
+</ul>
+</div>
+</div>
+<div class="section" id="wiki-de-leila">
+<h3>Wiki de LEILA<a class="headerlink" href="#wiki-de-leila" title="Enlazar permanentemente con este título"></a></h3>
+<p>El <a class="reference external" href="https://github.com/ucd-dnp/leila/wiki" target="_blank">Wiki de LEILA</a> se encuentra en el repositorio web de GitHub y contiene la siguiente información:</p>
+<ul class="simple">
+<li>Proceso de trabajo de los desarrolladores de LEILA</li>
+<li>Guía para hacer preguntas de uso, reportar errores y solicitar nuevas características para LEILA</li>
+<li>Guía para hacer contribuciones y pull-request a LEILA</li>
+<li>Reglas de comunidad</li>
+</ul>
+</div>
+<div class="section" id="obsoleto">
+<h3>Obsoleto<a class="headerlink" href="#obsoleto" title="Enlazar permanentemente con este título"></a></h3>
+<ul class="simple">
+<li>Ya no es necesario el parámetro <em>token</em> dentro de las funciones <a class="reference internal" href="funciones/datos_gov.html#datos_gov.DatosGov.cargar_base" title="datos_gov.DatosGov.cargar_base"><code class="xref py py-meth docutils literal notranslate"><span class="pre">datos_gov.DatosGov.cargar_base()</span></code></a> y <a class="reference internal" href="funciones/reporte.html#reporte.generar_reporte" title="reporte.generar_reporte"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reporte.generar_reporte()</span></code></a></li>
+</ul>
+</div>
+<div class="section" id="borrado">
+<h3>Borrado<a class="headerlink" href="#borrado" title="Enlazar permanentemente con este título"></a></h3>
+<ul class="simple">
+<li>Se eliminó función <code class="docutils literal notranslate"><span class="pre">filtrar_tabla()</span></code> del módulo <a class="reference internal" href="funciones/datos_gov.html#datos-gov"><span class="std std-ref">datos_gov</span></a></li>
+</ul>
+</div>
+<div class="section" id="arreglado">
+<h3>Arreglado<a class="headerlink" href="#arreglado" title="Enlazar permanentemente con este título"></a></h3>
+<ul class="simple">
+<li>Se corrigieron errores generados por conflictos de librerías de soporte al instalar la librería</li>
+</ul>
+</div>
+</div>
 </div>
 
 

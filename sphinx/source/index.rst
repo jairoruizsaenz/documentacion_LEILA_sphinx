@@ -20,7 +20,7 @@ LEILA - Librería de calidad de datos
 
 .. toctree::
    :maxdepth: 2
-   :caption: Prueba:
+   :caption: Otros:
    :hidden:
 
    control_de_cambios

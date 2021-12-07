@@ -16,6 +16,10 @@
 
    </li>
 
+.. |br| raw:: html
+
+   <br>
+
 Reporte
 =======
 
