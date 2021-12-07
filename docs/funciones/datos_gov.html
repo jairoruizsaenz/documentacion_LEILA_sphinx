@@ -74,6 +74,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reporte.html">Reporte</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Prueba:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../control_de_cambios.html">Control de cambios</a></li>
+</ul>
 
         </div>
       </div>
@@ -101,11 +105,6 @@
   <div class="section" id="datos-gov">
 <span id="id1"></span><h1>Datos gov<a class="headerlink" href="#datos-gov" title="Enlazar permanentemente con este título"></a></h1>
 <p>Este módulo permite conectar y evaluar desde el código los metadatos del Portal de Datos Abiertos y descargar las bases de datos a dataframes.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Advertencia</p>
-<p>El módulo de Datos gov utiliza la API de Socrata. Esta permite hacer peticiones para la descarga de datos sin utilizar un token de identificación. Sin embargo, se recomienda crear una cuenta y su respectivo token para evitar que las descargas tengan limitaciones de tamaño y cantidad en los conjuntos de datos.</p>
-<p class="last">La cuenta de usuario puede ser creada desde el portal de <a class="reference external" href="https://www.datos.gov.co/signup" target="_blank">Datos Abiertos de Colombia</a>. Es posible solicitar su token con el siguiente enlace <a class="reference external" href="https://www.datos.gov.co/profile/edit/developer_settings" target="_blank">Solicitud token Socrata</a> o también puede tener acceso desde la documentación de API de algún conjunto de datos.</p>
-</div>
 <span class="target" id="module-datos_gov"></span><dl class="py class">
 <dt class="sig sig-object py" id="datos_gov.DatosGov">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><code class="sig-prename descclassname"><span class="pre">datos_gov.</span></code><code class="sig-name descname"><span class="pre">DatosGov</span></code><a class="headerlink" href="#datos_gov.DatosGov" title="Enlazar permanentemente con esta definición"></a></dt>
@@ -159,7 +158,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><ul class="first simple">
-<li><strong>filtro</strong> (<em>dict</em><em>, </em><em>opcional.</em>) – Permite filtar la tabla de inventario de datos             tomando como referencia las columnas presentes en la tabla,             mediante un diccionario de datos del tipo {«nombre_columna»:             [«valor buscado1», «valor buscado 2»]}. Para mayor información             consulte: (REVISAR)</li>
+<li><strong>filtro</strong> (<em>dict</em><em>, </em><em>opcional.</em>) – Permite filtar la tabla de inventario de datos             tomando como referencia las columnas presentes en la tabla,             mediante un diccionario de datos del tipo {“nombre_columna”:             [“valor buscado1”, “valor buscado 2”]}. Para mayor información             consulte: (REVISAR)</li>
 <li><strong>limite_filas</strong> (<em>int</em><em>, </em><em>opcional.</em>) – Limite de registros a descargar del inventario             de datos. Por defecto: <cite>10000000000</cite>.</li>
 </ul>
 </td>
@@ -187,7 +186,7 @@
 
 </dd></dl>
 
-<p><h4 style="margin-bottom: 6px;">Ejemplos</h4>
+<p><h2 style="margin-bottom: 6px;">Ejemplos</h2>
 <hr style="margin-top: 0;"></p>
 <div class="section" id="ejemplo-tabla-inventario">
 <h2>Ejemplo tabla_inventario<a class="headerlink" href="#ejemplo-tabla-inventario" title="Enlazar permanentemente con este título"></a></h2>
@@ -228,10 +227,10 @@
 <td>dueño de la publicación.</td>
 </tr>
 <tr class="row-even"><td><strong>base_publica</strong></td>
-<td>indica con un «si» si la información del conjunto de datos es público y con un «no» de lo contrario</td>
+<td>indica con un “si” si la información del conjunto de datos es público y con un “no” de lo contrario</td>
 </tr>
 <tr class="row-odd"><td><strong>tipo</strong></td>
-<td>indica el tipo de la publicación, que puede ser uno de los siguientes: «conjunto de datos», «enlace externo», «mapa», «grafico», «vista filtrada», «archivo o documento», «historia», «visualizacion», «lente de datos», «formulario», «calendario».</td>
+<td>indica el tipo de la publicación, que puede ser uno de los siguientes: “conjunto de datos”, “enlace externo”, “mapa”, “grafico”, “vista filtrada”, “archivo o documento”, “historia”, “visualizacion”, “lente de datos”, “formulario”, “calendario”.</td>
 </tr>
 <tr class="row-even"><td><strong>categoria</strong></td>
 <td>tema general del que trata la información publicada</td>
@@ -296,14 +295,14 @@
 <h3>Filtrar tabla inventario<a class="headerlink" href="#filtrar-tabla-inventario" title="Enlazar permanentemente con este título"></a></h3>
 <div class="section" id="busqueda-por-terminos-clave">
 <h4>Búsqueda por términos clave<a class="headerlink" href="#busqueda-por-terminos-clave" title="Enlazar permanentemente con este título"></a></h4>
-<p>Para hacer la búsqueda por términos clave, se construye un diccionario de Python que contenga como llaves los nombres de las columnas de texto de la tabla de inventario sobre las cuales se desea hacer el filtro. Los valores de cada llave es una lista que contiene uno o más términos clave. Este diccionario se ingresa al método «tabla_inventario» de DatosGov dentro del parámetro «filtro».</p>
-<p>Los términos que se ingresan al diccionario no tienen que tener tildes o mayúsculas que se encuentran en la columna original de la tabla de inventario. Por ejemplo, los resultados serán los mismos si se buscan las palabras «Economía», «economía», «economia» o «ECONOMÍA».</p>
-<p>Abajo se encuentra un ejemplo donde se filtra la tabla de inventario por las columnas «nombre» y «tipo». Dentro de la columna «nombre» se busca si contiene los términos «economia» o «ambiente» y si la columna «tipo» contiene el término «conjunto de datos». Es decir, se están buscando conjuntos de datos de temas de economía o ambiente.</p>
+<p>Para hacer la búsqueda por términos clave, se construye un diccionario de Python que contenga como llaves los nombres de las columnas de texto de la tabla de inventario sobre las cuales se desea hacer el filtro. Los valores de cada llave es una lista que contiene uno o más términos clave. Este diccionario se ingresa al método <a class="reference internal" href="#datos_gov.DatosGov.tabla_inventario" title="datos_gov.DatosGov.tabla_inventario"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DatosGov.tabla_inventario()</span></code></a> dentro del parámetro “filtro”.</p>
+<p>Los términos que se ingresan al diccionario no tienen que tener tildes o mayúsculas que se encuentran en la columna original de la tabla de inventario. Por ejemplo, los resultados serán los mismos si se buscan las palabras “Economía”, “economía”, “economia” o “ECONOMÍA”.</p>
+<p>Abajo se encuentra un ejemplo donde se filtra la tabla de inventario por las columnas “nombre” y “tipo”. Dentro de la columna “nombre” se busca si contiene los términos “economia” o “ambiente” y si la columna “tipo” contiene el término “conjunto de datos”. Es decir, se están buscando conjuntos de datos de temas de economía o ambiente.</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se crea el diccionario con el filtro deseado</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">filtro</span> <span class="o">=</span> <span class="p">{</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;economia&quot;</span><span class="p">,</span> <span class="s2">&quot;ambiente&quot;</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;conjunto de datos&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;economia&#39;</span><span class="p">,</span> <span class="s1">&#39;ambiente&#39;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s1">&#39;tipo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;conjunto de datos&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se abre la tabla de inventario con el filtro deseado</span>
@@ -578,13 +577,13 @@
 </div>
 <div class="section" id="busqueda-por-rango-de-filas-y-columnas">
 <h4>Búsqueda por rango de filas y columnas<a class="headerlink" href="#busqueda-por-rango-de-filas-y-columnas" title="Enlazar permanentemente con este título"></a></h4>
-<p>Para hacer el filtro de la tabla de inventario por el tamaño de un conjunto de datos, se tiene que incluir el nombre de las columnas «filas» y «columnas» en el diccionario. Los valores de estas llaves son listas con dos elementos cada una: el primer elemento es el valor mínimo de filas o columnas y el segundo el valor máximo.</p>
+<p>Para hacer el filtro de la tabla de inventario por el tamaño de un conjunto de datos, se tiene que incluir el nombre de las columnas “filas” y “columnas” en el diccionario. Los valores de estas llaves son listas con dos elementos cada una: el primer elemento es el valor mínimo de filas o columnas y el segundo el valor máximo.</p>
 <p>A continuación se muestra un ejemplo de filtro, donde se seleccionan los conjuntos de datos con mínimo 50 filas y máximo 60 y con mínimo 8 columnas y máximo 10</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se crea el diccionario con el filtro deseado</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">filtro</span> <span class="o">=</span> <span class="p">{</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;filas&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;columnas&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s1">&#39;filas&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s1">&#39;columnas&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se abre la tabla de inventario con el filtro deseado</span>
@@ -592,7 +591,7 @@
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Imprimir las columnas del código API, nombre, descripción, filas y columnas de la tabla de inventario filtrada</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">inventario</span><span class="p">[[</span><span class="s2">&quot;numero_api&quot;</span><span class="p">,</span> <span class="s2">&quot;nombre&quot;</span><span class="p">,</span> <span class="s2">&quot;descripcion&quot;</span><span class="p">,</span> <span class="s2">&quot;filas&quot;</span><span class="p">,</span> <span class="s2">&quot;columnas&quot;</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inventario</span><span class="p">[[</span><span class="s1">&#39;numero_api&#39;</span><span class="p">,</span> <span class="s1">&#39;nombre&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;filas&#39;</span><span class="p">,</span> <span class="s1">&#39;columnas&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 <table border="1" class="docutils align-default">
@@ -701,7 +700,7 @@
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se crea el diccionario con el filtro deseado</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">filtro</span> <span class="o">=</span> <span class="p">{</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;fecha_creacion&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-02-01&quot;</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2020-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-02-01&#39;</span><span class="p">],</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se abre la tabla de inventario con el filtro deseado</span>
@@ -1024,16 +1023,16 @@
 </div>
 <div class="section" id="abrir-un-conjunto-de-datos-del-portal-de-datos-abiertos">
 <h2>Abrir un conjunto de datos del Portal de Datos Abiertos<a class="headerlink" href="#abrir-un-conjunto-de-datos-del-portal-de-datos-abiertos" title="Enlazar permanentemente con este título"></a></h2>
-<p>Para abrir un conjunto de datos.gov.co es necesario tener el código API de ese conjunto e ingresarlo al método «cargar_base» de la clase DatosGov. Con esta función se crea un objeto que contiene el dataframe y el diccionario de metadatos del conjunto, los cuales se pueden obtener con los métodos «to_dataframe» y «metadatos»</p>
-<p>A continuación está el código para cargar el conjunto de datos de «Pueblos indígenas a nivel Nacional 2020», el cual se encuentra en el último filtro de la tabla de inventario.</p>
+<p>Para abrir un conjunto de datos.gov.co es necesario tener el código API de ese conjunto e ingresarlo al método <a class="reference internal" href="#datos_gov.DatosGov.cargar_base" title="datos_gov.DatosGov.cargar_base"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DatosGov.cargar_base()</span></code></a>. Con esta función se crea un objeto que contiene el dataframe y el diccionario de metadatos del conjunto, los cuales se pueden obtener con los métodos “to_dataframe” y “metadatos”</p>
+<p>A continuación está el código para cargar el conjunto de datos de “Pueblos indígenas a nivel Nacional 2020”, el cual se encuentra en el último filtro de la tabla de inventario.</p>
 <div class="section" id="cargar-conjunto-de-datos-con-numero-api">
 <h3>Cargar conjunto de datos con número API<a class="headerlink" href="#cargar-conjunto-de-datos-con-numero-api" title="Enlazar permanentemente con este título"></a></h3>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se define la variable &quot;numero_api&quot;, que contiene el número API del conjunto &quot;Pueblos indígenas a nivel Nacional 2020&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">numero_api</span> <span class="o">=</span> <span class="s2">&quot;etwv-wj8f&quot;</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se define la variable &#39;numero_api&#39;, que contiene el número API del conjunto &#39;Pueblos indígenas a nivel Nacional 2020&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">numero_api</span> <span class="o">=</span> <span class="s1">&#39;etwv-wj8f&#39;</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se descarga la información del conjunto de datos en la variable &quot;data&quot; con el método &quot;cargar_base&quot;.</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Al parámetro &quot;api_id&quot; se asigna el número API y &quot;limite_filas&quot; especifica que únicamente se descargan 200 filas del conjunto</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se descarga la información del conjunto de datos en la variable &#39;data&#39; con el método &#39;cargar_base&#39;.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Al parámetro &#39;api_id&#39; se asigna el número API y &#39;limite_filas&#39; especifica que únicamente se descargan 200 filas del conjunto</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">DatosGov</span><span class="p">()</span><span class="o">.</span><span class="n">cargar_base</span><span class="p">(</span><span class="n">api_id</span> <span class="o">=</span> <span class="n">numero_api</span><span class="p">,</span> <span class="n">limite_filas</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1042,7 +1041,7 @@
 <div class="section" id="obtener-dataframe-del-conjunto-de-datos">
 <h3>Obtener dataframe del conjunto de datos<a class="headerlink" href="#obtener-dataframe-del-conjunto-de-datos" title="Enlazar permanentemente con este título"></a></h3>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se obtiene el dataframe del conjunto de datos con el método &quot;to_dataframe&quot;</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se obtiene el dataframe del conjunto de datos con el método &#39;to_dataframe&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">datos</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se visualiza una versión reducida del dataframe</span>
@@ -1126,7 +1125,7 @@
 <div class="section" id="obtener-diccionario-de-metadatos-del-conjunto-de-datos">
 <h3>Obtener diccionario de metadatos del conjunto de datos<a class="headerlink" href="#obtener-diccionario-de-metadatos-del-conjunto-de-datos" title="Enlazar permanentemente con este título"></a></h3>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Los metadatos se obtienen con el método &quot;metadatos&quot; y se asignan a la variable &quot;meta&quot;</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Los metadatos se obtienen con el método &#39;metadatos&#39; y se asignan a la variable &#39;meta&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">metadatos</span><span class="p">()</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se visualiza el diccionario de metadatos</span>

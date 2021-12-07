@@ -1,8 +1,8 @@
 Ejemplos - Reporte
 ========================
 
-Ejemplo generar_reporte
------------------------
+Generando un reporte
+--------------------
 
 Crea un reporte de calidad de datos en formato HTML. Ver documentación :py:meth:`reporte.generar_reporte`
 
@@ -33,8 +33,8 @@ El título del reporte será 'Casos positivos de COVID-19 en Colombia (primeros 
 
 
 Si desea excluir una sección del reporte lo puede hacer mediante el parámetro secciones.
-En el siguiente ejemplo se excluyó del reporte la sección "correlaciones", y de la sección "Estadísticas específicas"
-solo se incluyeron las pestañas "Tipo de las columnas" y "Frecuencia de categorías"
+En el siguiente ejemplo se excluyó del reporte la sección 'correlaciones', y de la sección 'Estadísticas específicas'
+solo se incluyeron las pestañas 'Tipo de las columnas' y 'Frecuencia de categorías'
 
 
     .. code-block:: python

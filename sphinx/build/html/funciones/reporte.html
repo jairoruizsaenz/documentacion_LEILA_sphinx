@@ -23,6 +23,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="next" title="Control de cambios" href="../control_de_cambios.html" />
     <link rel="prev" title="Datos gov" href="datos_gov.html" /> 
 </head>
 
@@ -55,9 +56,13 @@
 <li class="toctree-l1"><a class="reference internal" href="calidad_datos.html">Calidad datos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datos_gov.html">Datos gov</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Reporte</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#ejemplo-generar-reporte">Ejemplo generar_reporte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generando-un-reporte">Generando un reporte</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Prueba:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../control_de_cambios.html">Control de cambios</a></li>
 </ul>
 
         </div>
@@ -83,13 +88,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <span class="target" id="reporte"></span><div class="section" id="id1">
+  <div class="section" id="id1">
 <h1>Reporte<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título"></a></h1>
-<p>La función <code class="docutils literal notranslate"><span class="pre">generar_reporte(base)</span></code> del módulo <strong>reporte</strong> busca facilitar el proceso de entendimiento de la calidad de datos de una base de datos de interés, para esto genera un reporte en formato HTML el cual consolida las funciones de calidad de datos implementadas en el módulo <a class="reference internal" href="calidad_datos.html#calidad-datos"><span class="std std-ref">Calidad datos</span></a> y <a class="reference internal" href="datos_gov.html#datos-gov"><span class="std std-ref">Datos gov</span></a>, facilitando la consulta de los resultados obtenidos del análisis exploratorio en un archivo independiente.</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">generar_reporte(base)</span></code> busca facilitar el proceso de entendimiento de la calidad de datos de una base de datos de interés, para esto genera un reporte en formato HTML el cual consolida las funciones de calidad de datos implementadas en el módulo <a class="reference internal" href="calidad_datos.html#calidad-datos"><span class="std std-ref">leila.calidad_datos</span></a> y <a class="reference internal" href="datos_gov.html#datos-gov"><span class="std std-ref">leila.datos_gov</span></a>, facilitando la consulta de los resultados obtenidos del análisis exploratorio en un archivo independiente.</p>
 <span class="target" id="module-reporte"></span><dl class="py function">
 <dt class="sig sig-object py" id="reporte.generar_reporte">
 <code class="sig-prename descclassname"><span class="pre">reporte.</span></code><code class="sig-name descname"><span class="pre">generar_reporte</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">datos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em><span class="n"><span class="pre">titulo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Reporte</span> <span class="pre">perfilamiento'</span></span></em>, <em><span class="n"><span class="pre">archivo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'perfilamiento_leila.html'</span></span></em>, <em><span class="n"><span class="pre">secciones</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'correlaciones':</span> <span class="pre">True,</span> <span class="pre">'especificas':</span> <span class="pre">['tipo',</span> <span class="pre">'frecuencias',</span> <span class="pre">'duplicados_columnas',</span> <span class="pre">'descriptivas'],</span> <span class="pre">'generales':</span> <span class="pre">True,</span> <span class="pre">'muestra_datos':</span> <span class="pre">True}</span></span></em>, <em><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#reporte.generar_reporte" title="Enlazar permanentemente con esta definición"></a></dt>
-<dd><p>Genera un reporte de calidad de datos en formato HTML. <a class="reference internal" href="#ejemplo-generar-reporte"><span class="std std-ref">Ver ejemplo</span></a></p>
+<dd><p>Genera un reporte de calidad de datos en formato HTML. <a class="reference internal" href="#generando-un-reporte"><span class="std std-ref">Ver ejemplo</span></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -111,7 +116,7 @@
 </table>
 </dd></dl>
 
-<p><h4 style="margin-bottom: 6px;">Ejemplos</h4>
+<p><h2 style="margin-bottom: 6px;">Ejemplos</h2>
 <hr style="margin-top: 0;"></p>
 <p>A continuación se presentan ejemplos de uso, el código y resultado esperado de estos. Los datos utilizados para los ejemplos corresponden a una muestra de los <strong>Casos positivos de COVID-19 en Colombia</strong> disponibles en el portal de <a class="reference external" href="https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia/gt2j-8ykr" target="_blank">Datos Abiertos de Colombia</a>, se debe aclarar que los datos fueron modificados con el propósito de presentar el alcance de las diferentes funciones de la librería.</p>
 <blockquote>
@@ -130,8 +135,8 @@
 </div></blockquote>
 <p>En caso que desee utilizar los datos utilizados en los ejemplos, puede descargarlos utilizando el siguiente link. <a class="reference download external" download="" href="https://planeacionnacional-my.sharepoint.com/:x:/g/personal/ucd_dnp_gov_co/EcSDnonZAlBFqSFZ7N9MP1gBp50GlC_itwgNcLOm9CksyA?Download=1"><code class="xref download docutils literal notranslate"><span class="pre">Descargar</span> <span class="pre">datos</span> <span class="pre">(6.2</span> <span class="pre">MB)</span></code></a>.</p>
 <p><hr style="margin-top: 0;"></p>
-<div class="section" id="ejemplo-generar-reporte">
-<h2>Ejemplo generar_reporte<a class="headerlink" href="#ejemplo-generar-reporte" title="Enlazar permanentemente con este título"></a></h2>
+<div class="section" id="generando-un-reporte">
+<h2>Generando un reporte<a class="headerlink" href="#generando-un-reporte" title="Enlazar permanentemente con este título"></a></h2>
 <p>Crea un reporte de calidad de datos en formato HTML. Ver documentación <a class="reference internal" href="#reporte.generar_reporte" title="reporte.generar_reporte"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reporte.generar_reporte()</span></code></a></p>
 <p>En este ejemplo generaremos el reporte a partir de un api_id, este caso corresponde a los casos positivos de COVID-19 reportados en Colombia en el Portal de Datos Abiertos.</p>
 <p>Teniendo en cuenta que se trata de un conjunto de datos con muchos registros, usamos el argumento limite_filas para
@@ -156,8 +161,8 @@ limitar la descarga de información a solo los primeros 1.000 registros.</p>
 </div>
 </div></blockquote>
 <p>Si desea excluir una sección del reporte lo puede hacer mediante el parámetro secciones.
-En el siguiente ejemplo se excluyó del reporte la sección «correlaciones», y de la sección «Estadísticas específicas»
-solo se incluyeron las pestañas «Tipo de las columnas» y «Frecuencia de categorías»</p>
+En el siguiente ejemplo se excluyó del reporte la sección “correlaciones”, y de la sección “Estadísticas específicas”
+solo se incluyeron las pestañas “Tipo de las columnas” y “Frecuencia de categorías”</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Se importa la función generar_reporte del módulo de reporte</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">leila.reporte</span> <span class="kn">import</span> <span class="n">generar_reporte</span>
@@ -220,6 +225,7 @@ solo se incluyeron las pestañas «Tipo de las columnas» y «Frecuencia de cate
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
         <a href="datos_gov.html" class="btn btn-neutral float-left" title="Datos gov" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../control_de_cambios.html" class="btn btn-neutral float-right" title="Control de cambios" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
