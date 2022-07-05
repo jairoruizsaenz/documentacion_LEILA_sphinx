@@ -144,7 +144,7 @@ prometheus-client==0.7.1
 prompt-toolkit==3.0.5
 psutil==5.7.0
 py==1.8.1
-pycares==3.1.1
+pycares==4.2.0
 pycodestyle==2.5.0
 pycosat==0.6.3
 pycparser==2.20
